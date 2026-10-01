@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ComicCraft - AI Comic Story Creator</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<header class="hero">
+    <div class="hero-content">
+        <span class="badge">AI COMIC STORY CREATOR</span>
+        <h1>ComicCraft</h1>
+        <p>Turn a simple idea into a five-panel illustrated comic.</p>
+    </div>
+</header>
+
+<main class="container">
+    <section class="card">
+        <div class="section-header">
+            <span class="badge">CREATE</span>
+            <h2>Create Your Comic</h2>
+            <p>Enter your story idea and customize the character, setting, tone and art style.</p>
+        </div>
+
+        <form method="post" action="/generate" class="form-grid" onsubmit="startGeneration()">
+            <label class="full">
+                <span>Story Prompt</span>
+                <textarea name="story_prompt" maxlength="2000" required placeholder="A brave fox discovers a mysterious portal beneath an ancient tree."></textarea>
+            </label>
+
+            <label>
+                <span>Main Character</span>
+                <input type="text" name="character_name" maxlength="80" required placeholder="Aria">
+            </label>
+
+            <label>
+                <span>Setting</span>
+                <select name="setting">
+                    <option>Enchanted Forest</option>
+                    <option>School</option>
+                    <option>Futuristic City</option>
+                    <option>Outer Space</option>
+                    <option>Ancient Kingdom</option>
+                    <option>Underwater World</option>
+                </select>
+            </label>
+
+            <label>
+                <span>Story Tone</span>
+                <select name="tone">
+                    <option>Light-hearted</option>
+                    <option>Dramatic</option>
+                    <option>Funny</option>
+                    <option>Poetic</option>
+                    <option>Adventurous</option>
+                </select>
+            </label>
+
+            <label>
+                <span>Art Style</span>
+                <select name="art_style">
+                    <option>Anime</option>
+                    <option>Comic Book</option>
+                    <option>Pixel Art</option>
+                    <option>Realistic</option>
+                    <option>Fantasy Illustration</option>
+                </select>
+            </label>
+
+            <button id="generate-button" class="button full" type="submit">✨ Generate Comic</button>
+        </form>
+    </section>
+
+    <section class="steps-grid">
+        <div class="step-card"><div class="step-number">1</div><h3>Outline</h3><p>Gemini creates the five-panel structure.</p></div>
+        <div class="step-card"><div class="step-number">2</div><h3>Script</h3><p>Gemini writes narration and dialogue.</p></div>
+        <div class="step-card"><div class="step-number">3</div><h3>Artwork</h3><p>AI creates an illustration for each panel.</p></div>
+        <div class="step-card"><div class="step-number">4</div><h3>PDF</h3><p>The final comic is exported to PDF.</p></div>
+    </section>
+</main>
+
+<script>
+function startGeneration() {
+    const button = document.getElementById('generate-button');
+    button.disabled = true;
+    button.textContent = '⏳ Creating your comic...';
+}
+</script>
+</body>
+</html>

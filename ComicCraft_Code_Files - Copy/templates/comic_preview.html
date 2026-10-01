@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Your Comic - ComicCraft</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<header class="topbar">
+    <a href="/" class="brand">ComicCraft</a>
+    <a href="/" class="top-link">Create Another</a>
+</header>
+
+<main class="container">
+    <section class="preview-header card">
+        <span class="badge">GENERATED COMIC</span>
+        <h1>{{ input.character_name }}'s Adventure</h1>
+        <p>{{ input.story_prompt }}</p>
+        <div class="button-row">
+            <a class="button" href="{{ pdf_path }}" download>⬇ Download Your Comic as PDF</a>
+            <a class="secondary-button" href="/export-success">Open Export Success Page</a>
+        </div>
+    </section>
+
+    <section class="comic-list">
+        {% for panel in layout %}
+        <article class="panel card">
+            <div class="panel-heading">
+                <span class="panel-number">Panel {{ panel.panel_number }}</span>
+                <h2>{{ panel.title }}</h2>
+            </div>
+            <div class="panel-image-wrapper">
+                <img src="{{ panel.image_path }}" alt="Comic panel {{ panel.panel_number }}" class="panel-image" loading="lazy">
+            </div>
+            <div class="panel-content">
+                <p class="scene-description">{{ panel.scene_description }}</p>
+                <div class="story-box"><strong>Caption</strong><p>{{ panel.caption }}</p></div>
+                <div class="story-box"><strong>Narration</strong><p>{{ panel.narration }}</p></div>
+                {% if panel.dialogue %}<div class="story-box dialogue"><strong>Dialogue</strong><p>"{{ panel.dialogue }}"</p></div>{% endif %}
+                <details><summary>View Image Prompt</summary><p class="muted">{{ panel.image_prompt }}</p></details>
+            </div>
+        </article>
+        {% endfor %}
+    </section>
+
+    <section class="download-card card">
+        <h2>Your comic is ready!</h2>
+        <p>Download the complete PDF containing all generated panels and story text.</p>
+        <a class="button" href="{{ pdf_path }}" download>⬇ Download PDF</a>
+    </section>
+</main>
+</body>
+</html>

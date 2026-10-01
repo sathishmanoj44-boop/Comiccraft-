@@ -1,0 +1,23 @@
+:root{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#172033;background:#f4f6fb}
+*{box-sizing:border-box}
+body{margin:0;line-height:1.55;background:linear-gradient(135deg,#f6f7fb,#eef1f9)}
+a{color:inherit}
+.hero{padding:80px 20px 110px;color:#fff;background:linear-gradient(135deg,#202b55,#6046c4 55%,#e45b8f)}
+.hero-content{max-width:1050px;margin:auto}.hero h1{margin:10px 0;font-size:clamp(2.8rem,6vw,5rem);line-height:1}.hero p{max-width:650px;margin-top:22px;font-size:1.2rem;opacity:.9}
+.badge{display:inline-block;padding:6px 11px;border-radius:999px;background:rgba(91,70,214,.12);color:#5b46d6;font-size:.76rem;font-weight:900;letter-spacing:.04em}.hero .badge{color:#fff;background:rgba(255,255,255,.16)}
+.container{width:min(1050px,calc(100% - 36px));margin:-48px auto 60px}.container.narrow{max-width:700px;margin-top:70px}
+.card{background:#fff;border-radius:22px;padding:28px;box-shadow:0 18px 55px rgba(25,35,65,.1)}
+.section-header{margin-bottom:25px}.section-header h2{margin:10px 0 5px}.section-header p{color:#667085}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.full{grid-column:1/-1}
+label{display:flex;flex-direction:column;gap:8px;font-weight:800}input,textarea,select{width:100%;border:1px solid #d9deea;border-radius:12px;padding:13px 14px;background:#fbfcff;color:#172033;font:inherit;outline:none}textarea{min-height:150px;resize:vertical}
+input:focus,textarea:focus,select:focus{border-color:#6a56de;box-shadow:0 0 0 3px rgba(106,86,222,.1)}
+.button,.secondary-button{display:inline-flex;justify-content:center;align-items:center;min-height:48px;padding:12px 20px;border-radius:12px;font-weight:800;text-decoration:none;cursor:pointer;transition:transform .15s ease,filter .15s ease}
+.button{border:0;color:#fff;background:linear-gradient(135deg,#5b46d6,#7c5fe5)}.secondary-button{border:1px solid #d9deea;color:#30384c;background:#fff}.button:hover,.secondary-button:hover{transform:translateY(-1px)}.button:disabled{cursor:wait;opacity:.7}
+.steps-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:18px}.step-card{padding:20px;border-radius:17px;background:#fff;box-shadow:0 8px 35px rgba(25,35,65,.07)}.step-number{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#eeeafd;color:#5b46d6;font-weight:900}.step-card h3{margin:12px 0 6px}.step-card p{margin:0;color:#667085;font-size:.94rem}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:16px max(18px,calc((100% - 1050px)/2));color:#fff;background:#202b55}.brand{color:#fff;text-decoration:none;font-size:1.2rem;font-weight:900}.top-link{color:#fff;opacity:.9}
+.preview-header{margin-bottom:22px}.preview-header h1{margin:10px 0}.preview-header p{color:#667085}.button-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.comic-list{display:grid;gap:22px}.panel{overflow:hidden}.panel-heading{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px;margin-bottom:18px}.panel-heading h2{margin:0}.panel-number{color:#5b46d6;font-weight:900}.panel-image-wrapper{overflow:hidden;border-radius:16px;background:#eef0f5}.panel-image{display:block;width:100%;max-height:800px;object-fit:contain}.panel-content{padding-top:20px}.scene-description{margin-top:0;color:#4b5567;font-style:italic}
+.story-box{padding:14px 16px;margin-top:12px;border-radius:12px;background:#f7f8fc}.story-box p{margin:5px 0 0}.story-box.dialogue{background:#f0edff}details{margin-top:18px}summary{cursor:pointer;font-weight:800;color:#5b46d6}.muted{color:#667085;font-size:.9rem}.download-card{margin-top:22px;text-align:center}.download-card h2{margin-top:0}
+.success-card,.error-card{text-align:center}.success-icon{display:grid;place-items:center;width:68px;height:68px;margin:0 auto 18px;border-radius:50%;background:#dff7e7;color:#19733b;font-size:2rem;font-weight:900}.error-message{padding:15px;border-radius:12px;background:#fff1f1;color:#a33a3a;text-align:left;word-break:break-word}
+@media(max-width:800px){.form-grid,.steps-grid{grid-template-columns:1fr}.full{grid-column:auto}.container{margin-top:-35px}.hero{padding-bottom:75px}}
+@media(max-width:550px){.card{padding:20px}.topbar{padding:14px 18px}.button-row{flex-direction:column}.button,.secondary-button{width:100%}}

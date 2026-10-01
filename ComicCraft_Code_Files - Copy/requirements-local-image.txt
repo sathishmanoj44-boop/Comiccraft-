@@ -1,0 +1,5 @@
+-r requirements.txt
+diffusers>=0.40,<1
+transformers>=4.50,<5
+accelerate>=1.10,<2
+torch>=2.6,<3
